@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://mcp.edgeone.site/share/fVBGMjZHQEb5DGeGpXRlo -->
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI网站集合 | 后台管理</title>
+    <script src="./AI网站集合 _ 后台管理_files/saved_resource"></script>
+    <link rel="stylesheet" href="./AI网站集合 _ 后台管理_files/all.min.css">
+    <style>
+        .category-tab {
+            transition: all 0.3s ease;
+        }
+        .category-tab:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .website-card {
+            transition: all 0.3s ease;
+        }
+        .website-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.16 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.container{width:100%}@media (min-width: 640px){.container{max-width:640px}}@media (min-width: 768px){.container{max-width:768px}}@media (min-width: 1024px){.container{max-width:1024px}}@media (min-width: 1280px){.container{max-width:1280px}}@media (min-width: 1536px){.container{max-width:1536px}}.absolute{position:absolute}.relative{position:relative}.right-3{right:0.75rem}.top-3{top:0.75rem}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-8{margin-bottom:2rem}.mr-1{margin-right:0.25rem}.mr-2{margin-right:0.5rem}.mr-3{margin-right:0.75rem}.block{display:block}.flex{display:flex}.grid{display:grid}.h-12{height:3rem}.w-12{width:3rem}.w-full{width:100%}.max-w-md{max-width:28rem}.cursor-pointer{cursor:pointer}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-3{gap:0.75rem}.gap-6{gap:1.5rem}.space-x-2 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.5rem * var(--tw-space-x-reverse));margin-left:calc(0.5rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-3 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.75rem * var(--tw-space-x-reverse));margin-left:calc(0.75rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-md{border-radius:0.375rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-gray-200{--tw-border-opacity:1;border-color:rgb(229 231 235 / var(--tw-border-opacity, 1))}.border-gray-300{--tw-border-opacity:1;border-color:rgb(209 213 219 / var(--tw-border-opacity, 1))}.border-indigo-200{--tw-border-opacity:1;border-color:rgb(199 210 254 / var(--tw-border-opacity, 1))}.bg-blue-100{--tw-bg-opacity:1;background-color:rgb(219 234 254 / var(--tw-bg-opacity, 1))}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.bg-indigo-100{--tw-bg-opacity:1;background-color:rgb(224 231 255 / var(--tw-bg-opacity, 1))}.bg-indigo-600{--tw-bg-opacity:1;background-color:rgb(79 70 229 / var(--tw-bg-opacity, 1))}.bg-purple-100{--tw-bg-opacity:1;background-color:rgb(243 232 255 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.p-5{padding:1.25rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-8{padding-top:2rem;padding-bottom:2rem}.pt-4{padding-top:1rem}.text-2xl{font-size:1.5rem;line-height:2rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.text-blue-600{--tw-text-opacity:1;color:rgb(37 99 235 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.text-indigo-600{--tw-text-opacity:1;color:rgb(79 70 229 / var(--tw-text-opacity, 1))}.text-purple-600{--tw-text-opacity:1;color:rgb(147 51 234 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.hover\:bg-gray-50:hover{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.hover\:bg-indigo-50:hover{--tw-bg-opacity:1;background-color:rgb(238 242 255 / var(--tw-bg-opacity, 1))}.hover\:bg-indigo-700:hover{--tw-bg-opacity:1;background-color:rgb(67 56 202 / var(--tw-bg-opacity, 1))}.hover\:text-gray-700:hover{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.hover\:text-indigo-600:hover{--tw-text-opacity:1;color:rgb(79 70 229 / var(--tw-text-opacity, 1))}.hover\:underline:hover{-webkit-text-decoration-line:underline;text-decoration-line:underline}.focus\:border-indigo-500:focus{--tw-border-opacity:1;border-color:rgb(99 102 241 / var(--tw-border-opacity, 1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-indigo-500:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(99 102 241 / var(--tw-ring-opacity, 1))}@media (min-width: 768px){.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}}@media (min-width: 1024px){.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}}</style><style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    
+    .button-container {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+    }
+    
+    .edgeone-button {
+        display: flex;
+        align-items: center;
+        background: #ffffff;
+        color: #000000;
+        border: none;
+        border-radius: 50px;
+        padding: 10px 20px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+    
+    .edgeone-button:hover {
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        transform: translateY(-1px);
+    }
+    
+    .button-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+        background: linear-gradient(45deg, #8B5CF6, #D946EF);
+        border-radius: 50%;
+        color: white;
+        font-weight: bold;
+    }
+    
+    .close-button {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        width: 20px;
+        height: 20px;
+        background: #000;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 12px;
+        cursor: pointer;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+        z-index: 1001;
+    }
+    
+    .button-container:hover .close-button {
+        opacity: 1;
+    }
+</style><script src="./AI网站集合 _ 后台管理_files/js" async=""></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag("js", new Date());gtag("config", "G-MBR88GEWNE");</script></head>
+<body class="bg-gray-100">
+    <!-- 导航栏 -->
+    <nav class="bg-indigo-600 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-robot text-2xl"></i>
+                <h1 class="text-xl font-bold">AI网站集合</h1>
+            </div>
+            <div>
+                <button id="adminBtn" class="bg-white text-indigo-600 px-4 py-2 rounded-lg font-medium hover:bg-indigo-50 transition">
+                    <i class="fas fa-cog mr-2"></i>后台管理
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <div class="container mx-auto px-4 py-8">
+        <!-- 分类标签 -->
+        <div class="flex flex-wrap gap-3 mb-8">
+            <button class="category-tab bg-white px-4 py-2 rounded-full shadow-md font-medium text-indigo-600 border border-indigo-200 hover:bg-indigo-50 active-tab">
+                全部
+            </button>
+            <button class="category-tab bg-white px-4 py-2 rounded-full shadow-md font-medium text-gray-700 border border-gray-200 hover:bg-gray-50">
+                文本生成
+            </button>
+            <button class="category-tab bg-white px-4 py-2 rounded-full shadow-md font-medium text-gray-700 border border-gray-200 hover:bg-gray-50">
+                图像生成
+            </button>
+            <button class="category-tab bg-white px-4 py-2 rounded-full shadow-md font-medium text-gray-700 border border-gray-200 hover:bg-gray-50">
+                视频生成
+            </button>
+            <button class="category-tab bg-white px-4 py-2 rounded-full shadow-md font-medium text-gray-700 border border-gray-200 hover:bg-gray-50">
+                代码辅助
+            </button>
+            <button class="category-tab bg-white px-4 py-2 rounded-full shadow-md font-medium text-gray-700 border border-gray-200 hover:bg-gray-50">
+                其他工具
+            </button>
+        </div>
+
+        <!-- 搜索框 -->
+        <div class="mb-8">
+            <div class="relative max-w-md mx-auto">
+                <input type="text" id="searchInput" placeholder="搜索AI网站..." class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                <button class="absolute right-3 top-3 text-gray-400 hover:text-indigo-600">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- AI网站展示 -->
+        <div id="websitesContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- 示例网站卡片 -->
+            <div class="website-card bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="p-5">
+                    <div class="flex items-center mb-3">
+                        <div class="w-12 h-12 rounded-lg bg-indigo-100 flex items-center justify-center mr-3">
+                            <i class="fas fa-comment-dots text-indigo-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg">ChatGPT</h3>
+                            <span class="text-xs px-2 py-1 bg-indigo-100 text-indigo-600 rounded-full">文本生成</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">OpenAI开发的强大对话AI，能够理解和生成自然语言。</p>
+                    <div class="flex justify-between items-center">
+                        <a href="https://chat.openai.com/" target="_blank" class="text-indigo-600 hover:underline flex items-center">
+                            <i class="fas fa-external-link-alt mr-1"></i> 访问网站
+                        </a>
+                        <span class="text-sm text-gray-500">免费/付费</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="website-card bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="p-5">
+                    <div class="flex items-center mb-3">
+                        <div class="w-12 h-12 rounded-lg bg-purple-100 flex items-center justify-center mr-3">
+                            <i class="fas fa-image text-purple-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg">Midjourney</h3>
+                            <span class="text-xs px-2 py-1 bg-purple-100 text-purple-600 rounded-full">图像生成</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">AI艺术生成器，通过文本提示创建惊人的图像和艺术作品。</p>
+                    <div class="flex justify-between items-center">
+                        <a href="https://www.midjourney.com/" target="_blank" class="text-indigo-600 hover:underline flex items-center">
+                            <i class="fas fa-external-link-alt mr-1"></i> 访问网站
+                        </a>
+                        <span class="text-sm text-gray-500">付费</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="website-card bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="p-5">
+                    <div class="flex items-center mb-3">
+                        <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center mr-3">
+                            <i class="fas fa-code text-blue-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg">GitHub Copilot</h3>
+                            <span class="text-xs px-2 py-1 bg-blue-100 text-blue-600 rounded-full">代码辅助</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">AI结对编程助手，帮助开发者更快地编写代码。</p>
+                    <div class="flex justify-between items-center">
+                        <a href="https://github.com/features/copilot" target="_blank" class="text-indigo-600 hover:underline flex items-center">
+                            <i class="fas fa-external-link-alt mr-1"></i> 访问网站
+                        </a>
+                        <span class="text-sm text-gray-500">付费</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 后台管理模态框 -->
+    <div id="adminModal" class="modal">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-bold text-gray-800">后台管理 - 添加AI网站</h2>
+                <span id="closeModal" class="text-gray-500 hover:text-gray-700 cursor-pointer text-2xl">×</span>
+            </div>
+            
+            <form id="addWebsiteForm" class="space-y-4">
+                <div>
+                    <label for="websiteName" class="block text-sm font-medium text-gray-700 mb-1">网站名称</label>
+                    <input type="text" id="websiteName" required="" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+                
+                <div>
+                    <label for="websiteUrl" class="block text-sm font-medium text-gray-700 mb-1">网站URL</label>
+                    <input type="url" id="websiteUrl" required="" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="https://">
+                </div>
+                
+                <div>
+                    <label for="websiteCategory" class="block text-sm font-medium text-gray-700 mb-1">分类</label>
+                    <select id="websiteCategory" required="" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <option value="">选择分类</option>
+                        <option value="文本生成">文本生成</option>
+                        <option value="图像生成">图像生成</option>
+                        <option value="视频生成">视频生成</option>
+                        <option value="代码辅助">代码辅助</option>
+                        <option value="其他工具">其他工具</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="websiteDescription" class="block text-sm font-medium text-gray-700 mb-1">描述</label>
+                    <textarea id="websiteDescription" rows="3" required="" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+                </div>
+                
+                <div>
+                    <label for="websitePricing" class="block text-sm font-medium text-gray-700 mb-1">定价模式</label>
+                    <select id="websitePricing" required="" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <option value="免费">免费</option>
+                        <option value="付费">付费</option>
+                        <option value="免费/付费">免费/付费</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="websiteIcon" class="block text-sm font-medium text-gray-700 mb-1">图标</label>
+                    <select id="websiteIcon" required="" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <option value="fa-comment-dots">文本</option>
+                        <option value="fa-image">图像</option>
+                        <option value="fa-video">视频</option>
+                        <option value="fa-code">代码</option>
+                        <option value="fa-robot">AI</option>
+                        <option value="fa-brain">智能</option>
+                        <option value="fa-magic">魔法</option>
+                    </select>
+                </div>
+                
+                <div class="flex justify-end space-x-3 pt-4">
+                    <button type="button" id="cancelAdd" class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50">取消</button>
+                    <button type="submit" class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700">添加网站</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // 模态框控制
+        const adminBtn = document.getElementById('adminBtn');
+        const adminModal = document.getElementById('adminModal');
+        const closeModal = document.getElementById('closeModal');
+        const cancelAdd = document.getElementById('cancelAdd');
+        
+        adminBtn.addEventListener('click', () => {
+            adminModal.style.display = 'block';
+        });
+        
+        closeModal.addEventListener('click', () => {
+            adminModal.style.display = 'none';
+        });
+        
+        cancelAdd.addEventListener('click', () => {
+            adminModal.style.display = 'none';
+        });
+        
+        window.addEventListener('click', (event) => {
+            if (event.target === adminModal) {
+                adminModal.style.display = 'none';
+            }
+        });
+        
+        // 分类标签切换
+        const categoryTabs = document.querySelectorAll('.category-tab');
+        categoryTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                categoryTabs.forEach(t => t.classList.remove('active-tab', 'text-indigo-600', 'border-indigo-200'));
+                categoryTabs.forEach(t => t.classList.add('text-gray-700', 'border-gray-200'));
+                
+                tab.classList.add('active-tab', 'text-indigo-600', 'border-indigo-200');
+                tab.classList.remove('text-gray-700', 'border-gray-200');
+                
+                // 这里可以添加按分类筛选网站的逻辑
+            });
+        });
+        
+        // 添加网站表单提交
+        const addWebsiteForm = document.getElementById('addWebsiteForm');
+        const websitesContainer = document.getElementById('websitesContainer');
+        
+        addWebsiteForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('websiteName').value;
+            const url = document.getElementById('websiteUrl').value;
+            const category = document.getElementById('websiteCategory').value;
+            const description = document.getElementById('websiteDescription').value;
+            const pricing = document.getElementById('websitePricing').value;
+            const icon = document.getElementById('websiteIcon').value;
+            
+            // 确定颜色类别
+            let colorClass = 'indigo';
+            if (category === '图像生成') colorClass = 'purple';
+            if (category === '视频生成') colorClass = 'red';
+            if (category === '代码辅助') colorClass = 'blue';
+            if (category === '其他工具') colorClass = 'green';
+            
+            // 创建新网站卡片
+            const newWebsite = document.createElement('div');
+            newWebsite.className = 'website-card bg-white rounded-xl shadow-md overflow-hidden';
+            newWebsite.innerHTML = `
+                <div class="p-5">
+                    <div class="flex items-center mb-3">
+                        <div class="w-12 h-12 rounded-lg bg-${colorClass}-100 flex items-center justify-center mr-3">
+                            <i class="fas ${icon} text-${colorClass}-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg">${name}</h3>
+                            <span class="text-xs px-2 py-1 bg-${colorClass}-100 text-${colorClass}-600 rounded-full">${category}</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">${description}</p>
+                    <div class="flex justify-between items-center">
+                        <a href="${url}" target="_blank" class="text-indigo-600 hover:underline flex items-center">
+                            <i class="fas fa-external-link-alt mr-1"></i> 访问网站
+                        </a>
+                        <span class="text-sm text-gray-500">${pricing}</span>
+                    </div>
+                </div>
+            `;
+            
+            // 添加到容器
+            websitesContainer.prepend(newWebsite);
+            
+            // 重置表单并关闭模态框
+            addWebsiteForm.reset();
+            adminModal.style.display = 'none';
+            
+            // 这里可以添加将数据保存到本地存储或后端API的逻辑
+        });
+        
+        // 搜索功能
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', () => {
+            const searchTerm = searchInput.value.toLowerCase();
+            const websiteCards = document.querySelectorAll('.website-card');
+            
+            websiteCards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const description = card.querySelector('p').textContent.toLowerCase();
+                
+                if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+<script>
+const style = document.createElement('style');
+style.textContent = `
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    
+    .button-container {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+    }
+    
+    .edgeone-button {
+        display: flex;
+        align-items: center;
+        background: #ffffff;
+        color: #000000;
+        border: none;
+        border-radius: 50px;
+        padding: 10px 20px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+    
+    .edgeone-button:hover {
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        transform: translateY(-1px);
+    }
+    
+    .button-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+        background: linear-gradient(45deg, #8B5CF6, #D946EF);
+        border-radius: 50%;
+        color: white;
+        font-weight: bold;
+    }
+    
+    .close-button {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        width: 20px;
+        height: 20px;
+        background: #000;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 12px;
+        cursor: pointer;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+        z-index: 1001;
+    }
+    
+    .button-container:hover .close-button {
+        opacity: 1;
+    }
+`;
+document.head.appendChild(style);
+
+const buttonContainer = document.createElement('div');
+buttonContainer.className = 'button-container';
+
+const closeButton = document.createElement('div');
+closeButton.className = 'close-button';
+closeButton.textContent = '×';
+
+const edgeoneButton = document.createElement('button');
+edgeoneButton.className = 'edgeone-button';
+
+edgeoneButton.appendChild(document.createTextNode('Powered by EdgeOne Pages'));
+
+buttonContainer.appendChild(closeButton);
+buttonContainer.appendChild(edgeoneButton);
+
+document.body.appendChild(buttonContainer);
+
+closeButton.addEventListener('click', function(e) {
+    e.stopPropagation();
+    buttonContainer.style.display = 'none';
+});
+
+edgeoneButton.addEventListener('click', function() {
+    window.open('https://edgeone.ai/zh/document/160427672992178176', '_blank');
+});
+
+(function loadGoogleAnalytics() {
+  const GA_ID = 'G-MBR88GEWNE';
+
+  if (!GA_ID) {
+    console.warn('Google Analytics ID is not defined');
+    return;
+  }
+
+  function createAnalyticsScripts() {
+    const script1 = document.createElement('script');
+    script1.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    script1.async = true;
+
+    const script2 = document.createElement('script');
+    script2.textContent = 'window.dataLayer = window.dataLayer || [];' +
+      'function gtag(){dataLayer.push(arguments);}' +
+      'gtag("js", new Date());' +
+      'gtag("config", "' + GA_ID + '");';
+
+    try {
+      document.head.appendChild(script1);
+      document.head.appendChild(script2);
+    } catch (err) {
+      console.error('Failed to load Google Analytics:', err);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', createAnalyticsScripts);
+  } else {
+    createAnalyticsScripts();
+  }
+})();
+
+</script><div class="button-container"><div class="close-button">×</div><button class="edgeone-button">Powered by EdgeOne Pages</button></div>
+
+</body></html>
